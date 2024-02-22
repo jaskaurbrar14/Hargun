@@ -1,0 +1,64 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.339);
+  @include tablet {
+    display: none;
+  }
+  &__container {
+    height: 100vh;
+    width: clamp(5rem, 50%, 24rem);
+    padding: 1rem;
+    background-color: #fff;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    @include tablet {
+    }
+
+    &-close {
+      position: absolute;
+      background: none;
+      border: none;
+      cursor: pointer;
+      top: 1rem;
+      right: 1rem;
+      @include tablet {
+        display: none;
+      }
+      &-img {
+        width: 1.5rem;
+      }
+    }
+    &-nav {
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      padding-top: 2rem;
+      padding-left: 1.5rem;
+      @include tablet {
+        display: none;
+      }
+      &-link {
+        @include text(1.5rem, 400, 2rem, $primary-black);
+        width: fit-content;
+        &:active,
+        &:hover {
+          border-bottom: 2px solid $primary-black;
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+  }
+}
