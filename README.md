@@ -19,7 +19,6 @@ I plan to open my own e-commerce store one day and I want to build the website f
 ### Features
 
 - As a user, I want to be able to find the product that I need easily
-- As a user, I want to have a quick checkout process
 - As a user, I want to be able to see trending and best-seller products
 - As a user, I want to be able to sign up for future offers and new product announcements
 - As a user, I want to be able to filter the products by category
@@ -126,6 +125,7 @@ Create client - react project with routes and boilerplate pages
 - Forgot password functionality
 - Unit and Integration Tests
 - Scroll back to same spot on the previous page once user exits a specific product page
+- As a user, I want to have a quick checkout process
 - Photo Zoom-ins for the product photos
 - logo icon in the URL
 - Pagination if there are a lot of products to fit in 1 page

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import BurgerMenu from "../burgerMenu/BurgerMenu.js";
-import hargun from "../../assets/logo/HARGUN.png";
+import hargun from "../../assets/logo/hargun.png";
 import search from "../../assets/icons/search.svg";
 import profile from "../../assets/icons/user-circle.svg";
 import cart from "../../assets/icons/shopping-cart.svg";
