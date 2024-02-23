@@ -1,102 +1,112 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .header {
-  @include page-width(0 1rem);
+  background-color: $primary-white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  @include tablet {
-    gap: 2.5rem;
-    @include page-width(0 2.25rem);
-  }
-  @include desktop {
-    @include page-width(0 auto);
-    width: 76.5rem;
-  }
-  &__logo {
-    order: 3;
-    margin: 0 auto;
-    &-img {
-      height: 2rem;
-      max-width: 50vw;
-    }
+  &__wrapper {
+    @include page-width(0 1rem);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
     @include tablet {
-      order: 1;
-      margin: 0;
-      height: 2.5rem;
+      padding: 1.5rem 0 1rem 0;
+
+      gap: 2.5rem;
+      @include page-width(0 2.25rem);
     }
-  }
-  &__search {
-    border: none;
-    order: 2;
-    background-color: #fff;
-    &-img {
-      width: 1.25rem;
-      @include tablet {
-        width: 1.5rem;
-      }
+    @include desktop {
+      @include page-width(0 auto);
+      width: 76.5rem;
     }
-    @include tablet {
+    &-logo {
       order: 3;
-    }
-  }
-  &__burger-menu {
-    border: none;
-    order: 1;
-    background-color: #fff;
-    @include tablet {
-      display: none;
-    }
-    &-img {
-      width: 1.25rem;
+      margin: 0 auto;
+      &-img {
+        height: 2rem;
+        max-width: 50vw;
+      }
       @include tablet {
-        width: 1.5rem;
+        order: 1;
+        margin: 0;
+        height: 2.5rem;
       }
     }
-  }
-  &__nav {
-    display: none;
-
-    @include tablet {
-      display: block;
-      margin-left: auto;
-      display: flex;
-      flex-direction: row;
+    &-search {
+      border: none;
       order: 2;
-      gap: 1.5rem;
+      background-color: #fff;
+      &-img {
+        width: 1.25rem;
+        @include tablet {
+          width: 1.5rem;
+        }
+      }
+      @include tablet {
+        order: 3;
+      }
     }
-    &-link {
+    &-burger-menu {
+      border: none;
+      order: 1;
+      background-color: #fff;
+      @include tablet {
+        display: none;
+      }
+      &-img {
+        width: 1.25rem;
+        @include tablet {
+          width: 1.5rem;
+        }
+      }
+    }
+    &-nav {
       display: none;
+
       @include tablet {
-        @include text(2.0625rem, 300, 2.75rem, $primary-black);
         display: block;
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        order: 2;
+        gap: 1.5rem;
       }
-      &:active,
-      &:hover {
-        border-bottom: 2px solid $primary-black;
+      &-link {
+        display: none;
+        @include tablet {
+          @include text(1.5rem, 400, 2.75rem, $primary-black);
+          display: block;
+        }
+        &:active,
+        &:hover {
+          border-bottom: 2px solid $primary-black;
+        }
       }
     }
-  }
-  &__profile {
-    order: 4;
-    &-img {
-      width: 1.25rem;
-      @include tablet {
-        width: 1.5rem;
+    &-profile {
+      order: 4;
+      &-img {
+        width: 1.25rem;
+        @include tablet {
+          width: 1.5rem;
+        }
       }
     }
-  }
-  &__cart {
-    order: 5;
-    &-img {
-      width: 1.25rem;
-      @include tablet {
-        width: 1.5rem;
+    &-cart {
+      order: 5;
+      &-img {
+        width: 1.25rem;
+        @include tablet {
+          width: 1.5rem;
+        }
       }
     }
   }

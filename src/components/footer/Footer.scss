@@ -1,6 +1,7 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .footer {
   &__signUp {
@@ -93,8 +94,12 @@
       }
       &-list {
         &-link {
+          @include text(1.125rem, 400, 1.25rem, $primary-white);
+
           &:active,
           &:hover {
+            @include text(1.125rem, 600, 1.25rem, $primary-white);
+
             border-bottom: 2px solid $primary-white;
           }
         }

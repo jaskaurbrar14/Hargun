@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import BurgerMenu from "../burgerMenu/BurgerMenu.js";
@@ -18,34 +18,52 @@ function Header() {
   };
   return (
     <header className="header">
-      <Link to="/" className="header__logo">
-        <img className="header__logo-img" src={hargun} alt="Site-logo" />{" "}
-      </Link>
-      <button className="header__search">
-        <img src={search} alt="search-logo" className="header__search-img" />
-      </button>
-      <button className="header__burger-menu" onClick={modalOpen}>
-        <img
-          className="header__burger-menu-img"
-          src={menu}
-          alt="burger-menu-logo"
-        />{" "}
-      </button>
-      {openModal && <BurgerMenu modalClose={modalClose} />}
-      <nav className="header__nav">
-        <Link className="header__nav-link" to="/">
-          Home
+      <div className="header__wrapper">
+        <Link to="/" className="header__wrapper-logo">
+          <img
+            className="header__wrapper-logo-img"
+            src={hargun}
+            alt="Site-logo"
+          />{" "}
         </Link>
-        <Link className="header__nav-link" to="/products">
-          Products
+        <button className="header__wrapper-search">
+          <img
+            src={search}
+            alt="search-logo"
+            className="header__wrapper-search-img"
+          />
+        </button>
+        <button className="header__wrapper-burger-menu" onClick={modalOpen}>
+          <img
+            className="header__wrapper-burger-menu-img"
+            src={menu}
+            alt="burger-menu-logo"
+          />{" "}
+        </button>
+        {openModal && <BurgerMenu modalClose={modalClose} />}
+        <nav className="header__wrapper-nav">
+          <Link className="header__wrapper-nav-link" to="/">
+            Home
+          </Link>
+          <Link className="header__wrapper-nav-link" to="/products">
+            Products
+          </Link>
+        </nav>
+        <Link className="header__wrapper-profile">
+          <img
+            className="header__wrapper-profile-img"
+            src={profile}
+            alt="profile-logo"
+          />{" "}
         </Link>
-      </nav>
-      <Link className="header__profile">
-        <img className="header__profile-img" src={profile} alt="profile-logo" />{" "}
-      </Link>
-      <Link className="header__cart">
-        <img className="header__cart-img" src={cart} alt="cart-logo" />{" "}
-      </Link>
+        <Link className="header__wrapper-cart">
+          <img
+            className="header__wrapper-cart-img"
+            src={cart}
+            alt="cart-logo"
+          />{" "}
+        </Link>
+      </div>
     </header>
   );
 }

@@ -1,6 +1,7 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .modal {
   position: fixed;
@@ -8,6 +9,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 200;
   background-color: rgba(0, 0, 0, 0.339);
   @include tablet {
     display: none;
