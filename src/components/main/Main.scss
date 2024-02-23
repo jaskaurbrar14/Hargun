@@ -1,0 +1,29 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+// @import "../../assets/images/main-page-image.png";
+
+.main {
+  &__hero {
+    &-img {
+    }
+  }
+  &__story {
+    &-heading {
+    }
+    &-text {
+    }
+  }
+  &__products {
+    background-image: url(../../assets/images/main-page-image.png);
+    height: 50vh;
+    &-overlay {
+      &-link {
+        &-heading {
+        }
+        &-text {
+        }
+      }
+    }
+  }
+}
