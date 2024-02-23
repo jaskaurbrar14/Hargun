@@ -1,3 +1,105 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.footer {
+  &__signUp {
+    background-color: $secondary-black;
+    &-wrapper {
+      @include page-width(0 1rem);
+
+      @include tablet {
+        @include page-width(0 2.25rem);
+      }
+      @include desktop {
+        @include page-width(0 auto);
+        width: 76.5rem;
+      }
+
+      &-heading {
+        text-align: center;
+        padding-bottom: 1rem;
+        padding-top: 1.5rem;
+        @include text(1.5rem, 700, 1.125rem, $primary-white);
+        @include tablet {
+          padding-bottom: 1.5rem;
+          padding-top: 2.25rem;
+          @include text(2.0625rem, 700, 1.375rem, $primary-white);
+        }
+      }
+      &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-bottom: 1.5rem;
+        @include tablet {
+          flex-direction: row;
+          justify-content: center;
+        }
+        &-input {
+          border-radius: 0.25rem;
+          max-width: 16rem;
+          @include text(0.75rem, 600, 1.25rem, $primary-black);
+          padding: 0.25rem 0.5rem;
+          margin: 0 auto;
+          @include tablet {
+            margin: 0;
+            width: 16rem;
+          }
+        }
+        &-button {
+          border-radius: 0.25rem;
+          border: 0px;
+          width: fit-content;
+          text-transform: uppercase;
+          background-color: $primary-white;
+          margin: 0 auto;
+          @include text(0.75rem, 600, 1.25rem, $primary-black);
+          padding: 0.25rem 0.5rem;
+          @include tablet {
+            margin: 0;
+          }
+          &:hover,
+          :active,
+          :focus {
+            @include text(0.75rem, 700, 1.25rem, $primary-black);
+            box-shadow: 5px 5px 10px #ffffff2c;
+          }
+        }
+      }
+    }
+  }
+  &__links {
+    padding: 1.5rem;
+    background-color: $primary-black;
+    @include tablet {
+      padding-top: 2.25rem;
+    }
+    &-wrapper {
+      justify-content: center;
+
+      @include page-width(0 1rem);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      @include tablet {
+        gap: 1.5rem;
+        @include page-width(0 2.25rem);
+      }
+      @include desktop {
+        @include page-width(0 auto);
+        width: 76.5rem;
+      }
+      &-list {
+        &-link {
+          color: #fff;
+          &:active,
+          &:hover {
+            border-bottom: 2px solid $primary-white;
+          }
+        }
+      }
+    }
+  }
+}
