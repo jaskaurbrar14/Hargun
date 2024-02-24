@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.main {
+.products {
   @include page-width(0 1rem);
   padding-bottom: 3rem;
   @include tablet {

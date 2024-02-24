@@ -19,7 +19,7 @@ function App() {
               path="/products/:product_id"
               element={<ProductDetailPage />}
             />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
         </>

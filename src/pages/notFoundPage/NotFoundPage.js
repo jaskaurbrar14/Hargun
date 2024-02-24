@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
 import "./NotFoundPage.scss";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NotFoundPage() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
   return (
-    <section className="modal">
-      <article className="modal__container">
-        <h3 className="modal__container-heading">Page Not Found </h3>
-        <p className="modal__container-description">
-          Please click on the button below to go to main page.
-        </p>
-        <button onClick={Navigate("/")}>Go to HomePage</button>
-      </article>
-    </section>
+    <article className="container">
+      <h1 className="container__heading">Page Not Found </h1>
+      <p className="container__description">
+        Please click on the button below to go to main page.
+      </p>
+      <button type="submit" className="container__button" onClick={handleClick}>
+        Go to HomePage
+      </button>
+    </article>
   );
 }
 

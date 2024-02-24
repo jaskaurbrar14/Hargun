@@ -7,28 +7,28 @@ function AllProducts() {
   const { allProducts } = useProductsContext();
 
   return (
-    <main className="main">
-      <h1 className="main__heading">All products</h1>
-      <ul className="main__article">
+    <main className="products">
+      <h1 className="products__heading">All products</h1>
+      <ul className="products__article">
         {" "}
         {allProducts.map((product) => (
-          <li key={product.id} className="main__article-card">
+          <li key={product.id} className="products__article-card">
             <Link
-              className="main__article-card-link"
+              className="products__article-card-link"
               to={`/products/${product.id}`}
             >
-              <div className="main__article-card-link-container">
+              <div className="products__article-card-link-container">
                 <img
-                  className="main__article-card-link-container-image"
+                  className="products__article-card-link-container-image"
                   src={product.photo[0]}
                   alt={product.title}
                 ></img>
               </div>
-              <section className="main__article-card-link-info">
-                <p className="main__article-card-link-info-title">
+              <section className="products__article-card-link-info">
+                <p className="products__article-card-link-info-title">
                   {product.title}
                 </p>
-                <p className="main__article-card-link-info-price">
+                <p className="products__article-card-link-info-price">
                   ${product.price}
                 </p>
               </section>
