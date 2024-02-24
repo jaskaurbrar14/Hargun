@@ -25,25 +25,20 @@
     }
   }
   &__carousel {
-    // .slick-list {
-    //   padding: 10px 10px; /* Space between items */
-    //   margin: 10px;
-    // }
-    // .slick-slide {
-    //   width: 20vw !important; /* Set width for each item */
-    // }
-
     &-card {
+      padding: 1rem;
       width: fit-content !important;
-      // border: 1px solid #4d4d4d24;
       overflow: hidden;
-      // &:hover {
-      //   // border: 1px solid #4d4d4d3d;
-      //   // box-shadow: 5px 5px 10px rgba(83, 75, 75, 0.173);
-      // }
       &-link {
         &-image {
           width: 100%;
+          object-fit: cover;
+          height: 45vh;
+          &:hover {
+            transform: scale(1.01);
+            transition: transform 0.2s ease-in-out;
+            overflow: hidden;
+          }
         }
         &-info {
           width: 19.5625rem;
@@ -57,15 +52,18 @@
           }
           &-price {
             text-align: center;
-
             padding: 0.5rem 0;
-            @include text(1rem, 400, 1.125rem, $primary-black);
+            @include text(1rem, 600, 1.125rem, $secondary-gold);
             @include tablet {
-              @include text(1.125rem, 400, 1.375rem, $primary-black);
+              @include text(1.125rem, 600, 1.375rem, $secondary-gold);
             }
           }
         }
       }
     }
   }
+}
+.slick-slide img {
+  padding: 1rem;
+  display: block;
 }

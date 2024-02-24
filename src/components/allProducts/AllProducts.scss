@@ -80,7 +80,7 @@
           &-price {
             text-align: center;
             padding: 0.5rem 0;
-            @include text(1rem, 600, 1.125rem, $primary-black);
+            @include text(1rem, 600, 1.125rem, $secondary-gold);
             @include tablet {
               @include text(1.125rem, 600, 1.375rem, $secondary-gold);
             }
