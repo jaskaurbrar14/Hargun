@@ -73,7 +73,7 @@ function TrendingCarousel() {
                     {product.title}
                   </p>
                   <p className="aside__carousel-card-link-info-price">
-                    {product.price}
+                    ${product.price}
                   </p>
                 </section>
               </Link>
