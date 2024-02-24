@@ -14,13 +14,14 @@
     width: 76.5rem;
   }
   &__heading {
+    text-transform: capitalize;
     text-align: center;
-    padding: 2.5rem 0 1rem 0;
-    @include text(1.75rem, 600, 2rem, $primary-black);
+    padding: 2.5rem 0 2rem 0;
+    @include text(2rem, 600, 1.125rem, $primary-black);
 
     @include tablet {
       padding: 3.5rem 0 2.5rem 0;
-      @include text(3rem, 600, 3rem, $primary-black);
+      @include text(3rem, 600, 1.375rem, $primary-black);
     }
   }
   &__article {
@@ -68,6 +69,7 @@
         }
         &-info {
           &-title {
+            text-transform: capitalize;
             text-align: center;
             padding: 0.5rem 0;
             @include text(1rem, 400, 1.125rem, $primary-black);

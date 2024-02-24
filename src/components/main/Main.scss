@@ -26,12 +26,12 @@
     }
 
     &-heading {
-      @include text(2rem, 700, 1.125rem, $primary-black);
+      @include text(2rem, 600, 1.125rem, $primary-black);
       padding: 1.5rem 0 1rem 0;
       @include tablet {
         padding: 2rem 0 1.5rem 0;
 
-        @include text(3rem, 700, 1.375rem, $primary-black);
+        @include text(3rem, 600, 1.375rem, $primary-black);
       }
     }
     &-text {

@@ -8,7 +8,7 @@ function AllProducts() {
 
   return (
     <main className="main">
-      <h2 className="main__heading">All products</h2>
+      <h1 className="main__heading">All products</h1>
       <ul className="main__article">
         {" "}
         {allProducts.map((product) => (

@@ -4,7 +4,7 @@ import React from "react";
 import "./ProductDetails.scss";
 
 function ProductDetails() {
-  return <div>ProductDetails</div>;
+  return <main>ProductDetails</main>;
 }
 
 export default ProductDetails;
