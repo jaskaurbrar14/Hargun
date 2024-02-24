@@ -22,7 +22,7 @@
       width: 70vw;
     }
     @include desktop {
-      width: 60vw;
+      width: 65vw;
     }
 
     &-heading {
@@ -38,7 +38,7 @@
       padding: 0.5rem 0;
       @include text(1rem, 400, 1.125rem, $primary-black);
       @include tablet {
-        @include text(1.125rem, 400, 1.375rem, $primary-black);
+        @include text(1.125rem, 400, 1.475rem, $primary-black);
       }
     }
   }
