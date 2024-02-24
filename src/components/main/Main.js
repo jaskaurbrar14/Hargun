@@ -7,11 +7,7 @@ function Main() {
   return (
     <main className="main">
       <section className="main__hero">
-        <img
-          className="main__hero-img"
-          src={heroImage}
-          alt="Hargun hero image"
-        />
+        <img className="main__hero-img" src={heroImage} alt="Hargun hero" />
       </section>
       <article className="main__story">
         <h1 className="main__story-heading"> Our Story</h1>

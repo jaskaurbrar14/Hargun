@@ -2,14 +2,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 import HomePage from "./pages/homePage/HomePage.js";
+import ProductProvider from "./utils/hooks.js";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-      <Footer />
+      <ProductProvider>
+        <>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+          <Footer />
+        </>
+      </ProductProvider>
     </BrowserRouter>
   );
 }
