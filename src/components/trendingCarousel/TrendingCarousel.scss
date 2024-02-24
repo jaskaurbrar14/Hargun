@@ -24,17 +24,25 @@
     }
   }
   &__carousel {
+    // .slick-list {
+    //   padding: 10px 10px; /* Space between items */
+    //   margin: 10px;
+    // }
+    // .slick-slide {
+    //   width: 20vw !important; /* Set width for each item */
+    // }
+
     &-card {
       width: fit-content !important;
-      border: 1px solid #4d4d4d24;
+      // border: 1px solid #4d4d4d24;
       overflow: hidden;
       &:hover {
-        border: 1px solid #4d4d4d3d;
-        box-shadow: 5px 5px 10px rgba(83, 75, 75, 0.173);
+        // border: 1px solid #4d4d4d3d;
+        // box-shadow: 5px 5px 10px rgba(83, 75, 75, 0.173);
       }
       &-link {
         &-image {
-          height: 40vh;
+          width: 100%;
         }
         &-info {
           width: 19.5625rem;
