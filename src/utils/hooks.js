@@ -38,7 +38,7 @@ export default function ProductProvider({ children }) {
     getTrendingProducts();
   }, []);
 
-  // get selected produc
+  // get selected product
   const { product_id } = useParams();
   const getSelectedProduct = async (product_id) => {
     try {
@@ -54,7 +54,7 @@ export default function ProductProvider({ children }) {
     if (product_id) {
       getSelectedProduct(product_id);
     }
-  }, []);
+  }, [[], product_id]);
   //Filter trending products
   const filteredTrendingProducts = trendingProducts.filter(
     (product) => product.id !== selectedProduct.id

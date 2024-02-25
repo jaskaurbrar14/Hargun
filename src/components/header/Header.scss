@@ -83,7 +83,7 @@
       &-link {
         display: none;
         @include tablet {
-          @include text(1.5rem, 400, 2.75rem, $primary-black);
+          @include text(1.5rem, 400, 2rem, $primary-black);
           display: block;
         }
         &:active,

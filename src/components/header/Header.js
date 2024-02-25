@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Header.scss";
 import BurgerMenu from "../burgerMenu/BurgerMenu.js";
 import hargun from "../../assets/logo/hargun.png";
@@ -7,6 +6,7 @@ import search from "../../assets/icons/search.svg";
 import profile from "../../assets/icons/user-circle.svg";
 import cart from "../../assets/icons/shopping-cart.svg";
 import menu from "../../assets/icons/menu.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [openModal, setOpenModal] = useState(false);
@@ -61,6 +61,7 @@ function Header() {
             className="header__wrapper-cart-img"
             src={cart}
             alt="cart-logo"
+            s
           />{" "}
         </Link>
       </div>
