@@ -32,6 +32,9 @@
     width: 98%;
     @include tablet {
       flex-direction: row;
+      width: 94%;
+    }
+    @include desktop {
       width: 90%;
     }
     &-images {
@@ -182,7 +185,7 @@
           @include tablet {
             padding: 0.45rem;
             width: 11.5rem;
-            @include text(1.75rem, 400, 1.475rem, $primary-black);
+            @include text(1.5rem, 400, 1.475rem, $primary-black);
           }
           &:hover {
             background-color: $primary-black;
@@ -191,7 +194,7 @@
 
             @include text(1.3rem, 400, 1.125rem, $primary-white);
             @include tablet {
-              @include text(1.75rem, 400, 1.475rem, $primary-white);
+              @include text(1.5rem, 400, 1.475rem, $primary-white);
             }
           }
         }
@@ -203,7 +206,7 @@
           @include tablet {
             width: 11.5rem;
             padding: 0.45rem;
-            @include text(1.75rem, 400, 1.475rem, $primary-white);
+            @include text(1.5rem, 400, 1.475rem, $primary-white);
           }
           &:hover {
             box-shadow: 0 4px 5px -5px rgba(0, 0, 0, 0.204);
@@ -211,7 +214,7 @@
             border: 2px solid $secondary-gold;
             @include text(1.3rem, 400, 1.125rem, $secondary-gold);
             @include tablet {
-              @include text(1.75rem, 400, 1.475rem, $secondary-gold);
+              @include text(1.5rem, 400, 1.475rem, $secondary-gold);
             }
           }
         }

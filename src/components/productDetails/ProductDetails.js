@@ -8,11 +8,11 @@ import bangles1 from "../../assets/images/ChainedChoker/2.jpg";
 import bangles2 from "../../assets/images/ChainedChoker/3.jpg";
 import bangles3 from "../../assets/images/ChainedChoker/4.jpg";
 
+// imported the pictures for products seperately as I was having internet issues and thr pictures were'nt loading. leaving the commented code to test with pictures from frontend incase the picturess take long or load from the backend.
 function ProductDetails() {
   const [selectedProduct, setSelectedProduct] = useState({});
   const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const { productId } = useParams();
-  // const { getSelectedProduct } = useProductsContext();
   const getSelectedProduct = async (productId) => {
     try {
       const response = await axios.get(
@@ -28,6 +28,7 @@ function ProductDetails() {
       getSelectedProduct(productId);
     }
   }, [productId]);
+
   return (
     <main className="productDetail">
       <h1 className="productDetail__heading">{selectedProduct.title}</h1>
