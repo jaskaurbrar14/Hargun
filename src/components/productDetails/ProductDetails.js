@@ -13,33 +13,19 @@ function ProductDetails() {
       getSelectedProduct(productId);
     }
   }, [productId]);
+  const photos = selectedProduct.photo;
   return (
     <main className="productDetail">
       <h1 className="productDetail__heading">{selectedProduct.title}</h1>
       <article key={selectedProduct.id} className="productDetail__article">
         <div className="productDetail__article-images">
-          <img
-            className="productDetail__article-images-main"
-            src={selectedProduct.photo[0]}
-            alt={selectedProduct.title}
-          ></img>{" "}
-          <div className="productDetail__article-images-sec">
+          {photos.map((photo) => (
             <img
-              className="productDetail__article-images-sec-1"
-              src={selectedProduct.photo[1]}
+              src={photo}
               alt={selectedProduct.title}
-            ></img>{" "}
-            <img
-              className="productDetail__article-images-sec-2"
-              src={selectedProduct.photo[2]}
-              alt={selectedProduct.title}
-            ></img>{" "}
-            <img
-              className="productDetail__article-images-sec-3"
-              src={selectedProduct.photo[3]}
-              alt={selectedProduct.title}
-            ></img>{" "}
-          </div>
+              className="productDetail__article-images-image"
+            />
+          ))}
         </div>
         <section className="productDetail__article-details">
           <p className="productDetail__article-details-description">
