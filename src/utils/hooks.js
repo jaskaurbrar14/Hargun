@@ -1,33 +1,34 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
 // import moment from "moment";
 
 const ProductsContext = createContext();
 export default function ProductProvider({ children }) {
   const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+  const { productId } = useParams();
 
   const [allProducts, setAllProducts] = useState([]);
   const [trendingProducts, setTrendingProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState({});
+  // const [selectedProduct, setSelectedProduct] = useState({});
 
   // get selected product
-  const { productId } = useParams();
-  const getSelectedProduct = async (productId) => {
-    try {
-      const response = await axios.get(
-        `${REACT_APP_SERVER_URL}/products/${productId}`
-      );
-      setSelectedProduct(response.data);
-    } catch (err) {
-      console.error({ err });
-    }
-  };
-  useEffect(() => {
-    if (productId) {
-      getSelectedProduct(productId);
-    }
-  }, [productId]);
+  // const getSelectedProduct = async (productId) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `${REACT_APP_SERVER_URL}/products/${productId}`
+  //     );
+  //     setSelectedProduct(response.data);
+  //   } catch (err) {
+  //     console.error({ err });
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (productId) {
+  //     getSelectedProduct(productId);
+  //   }
+  // }, [productId]);
 
   // get all products
   const getAllProducts = async () => {
@@ -58,16 +59,16 @@ export default function ProductProvider({ children }) {
   }, []);
 
   // Filter trending products
-  const filteredTrendingProducts = trendingProducts.filter(
-    (product) => product.id !== selectedProduct.id
-  );
+  // const filteredTrendingProducts = trendingProducts.filter(
+  //   (product) => product.id !== selectedProduct.id
+  // );
   const funcValue = {
     allProducts,
     trendingProducts,
-    getSelectedProduct,
-    selectedProduct,
-    filteredTrendingProducts,
+    // filteredTrendingProducts,
     REACT_APP_SERVER_URL,
+    // selectedProduct,
+    // getSelectedProduct,
   };
   return (
     <ProductsContext.Provider value={funcValue}>
