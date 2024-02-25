@@ -1,17 +1,23 @@
 import { useProductsContext } from "../../utils/hooks.js";
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./ProductDetails.scss";
 import { useParams } from "react-router-dom";
 
 function ProductDetails() {
-  const { selectedProduct } = useProductsContext();
-  const { product_id } = useParams();
+  const { getSelectedProduct, selectedProduct } = useProductsContext();
 
+  const { productId } = useParams();
+  useEffect(() => {
+    if (productId) {
+      getSelectedProduct(productId);
+    }
+  }, [productId]);
   return (
     <main className="">
       <h1 className="">{selectedProduct.title}</h1>
       <article key={selectedProduct.id} className="">
-        <div>
+        {/* <div>
           <img
             className=""
             src={selectedProduct.photo[0]}
@@ -34,15 +40,15 @@ function ProductDetails() {
               alt={selectedProduct.title}
             ></img>{" "}
           </div>
-        </div>
+        </div> */}
         <section className="">
           <p className="">{selectedProduct.description}</p>
           <p className="">${selectedProduct.price}</p>
           <div>
-            <button type="submit" className="" onClick={""}>
+            <button type="submit" className="">
               Add to Cart
             </button>
-            <button type="submit" className="" onClick={""}>
+            <button type="submit" className="">
               Buy Now
             </button>
           </div>

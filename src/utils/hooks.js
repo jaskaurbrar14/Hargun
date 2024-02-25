@@ -10,6 +10,25 @@ export default function ProductProvider({ children }) {
   const [allProducts, setAllProducts] = useState([]);
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState({});
+
+  // get selected product
+  const { productId } = useParams();
+  const getSelectedProduct = async (productId) => {
+    try {
+      const response = await axios.get(
+        `${REACT_APP_SERVER_URL}/products/${productId}`
+      );
+      setSelectedProduct(response.data);
+    } catch (err) {
+      console.error({ err });
+    }
+  };
+  useEffect(() => {
+    if (productId) {
+      getSelectedProduct(productId);
+    }
+  }, [productId]);
+
   // get all products
   const getAllProducts = async () => {
     try {
@@ -38,30 +57,14 @@ export default function ProductProvider({ children }) {
     getTrendingProducts();
   }, []);
 
-  // get selected product
-  const { product_id } = useParams();
-  const getSelectedProduct = async (product_id) => {
-    try {
-      const response = await axios.get(
-        `${REACT_APP_SERVER_URL}/products/${product_id}`
-      );
-      setSelectedProduct(response.data);
-    } catch (err) {
-      console.error({ err });
-    }
-  };
-  useEffect(() => {
-    if (product_id) {
-      getSelectedProduct(product_id);
-    }
-  }, [[], product_id]);
-  //Filter trending products
+  // Filter trending products
   const filteredTrendingProducts = trendingProducts.filter(
     (product) => product.id !== selectedProduct.id
   );
   const funcValue = {
     allProducts,
     trendingProducts,
+    getSelectedProduct,
     selectedProduct,
     filteredTrendingProducts,
     REACT_APP_SERVER_URL,
