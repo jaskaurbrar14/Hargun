@@ -2,3 +2,44 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+.productDetail {
+  &__heading {
+  }
+  &__article {
+    &-images {
+      &-main {
+      }
+      &-sec {
+        &-1 {
+        }
+        &-2 {
+        }
+        &-3 {
+        }
+      }
+    }
+    &-details {
+      &-description {
+      }
+      &-pricing {
+        &-quantity {
+        }
+        &-numbers {
+          &-minus {
+          }
+          &-value {
+          }
+          &-plus {
+          }
+        }
+      }
+      &-cta {
+        &-cart {
+        }
+        &-buy {
+        }
+      }
+    }
+  }
+}
