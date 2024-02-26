@@ -1,4 +1,3 @@
-import { useProductsContext } from "../../utils/hooks.js";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./ProductDetails.scss";
