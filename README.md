@@ -1,6 +1,6 @@
 # Project Title
 
-Jewellery E-Commerce
+Hargun
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
 
 ## Implementation
 
-### Installation-on-Developer-Environment
+### Installation on Developer Environment
 
 1. Clone the repository:
 
@@ -69,7 +69,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
    npm start
    ```
 
-### Folder-Structure
+### Folder Structure
 
 - public: Contains static assets like HTML files and images.
 - src: Contains the React application source code.
@@ -87,7 +87,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
 
 - ![Folder structure of React app](<websiteImages/Screenshot 2024-02-26 at 5.34.41 AM.png>)
 
-### Tech-Stack
+### Tech Stack
 
 - React
 - MySQL
@@ -173,7 +173,7 @@ List endpoints that your server will implement, including HTTP methods, paramete
       "description": "Perfect to pair with the bay hoops to make a dainty set of sophistication."
       }
 
-## Nice-to-haves
+## Nice to haves
 
 - As a user, I want to be able to filter the products by category
 - As a user, I want to be able to create a account to manage my saved products

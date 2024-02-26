@@ -17,7 +17,7 @@
   &__heading {
     text-transform: capitalize;
     text-align: center;
-    padding: 2.5rem 0 2rem 0;
+    padding: 2.5rem 0 1rem 0;
     @include text(1.75rem, 600, 2rem, $primary-black);
 
     @include tablet {

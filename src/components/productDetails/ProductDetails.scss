@@ -139,7 +139,9 @@
               padding: 0.25rem;
               flex-basis: 33.33%;
               text-align: center;
+              width: 2.5rem;
               background-color: #4d4d4d58;
+              border: none;
               @include text(1.5rem, 400, 1.125rem, $primary-black);
               @include tablet {
                 padding: 0.35rem;

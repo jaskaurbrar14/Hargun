@@ -2,14 +2,17 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./ProductDetails.scss";
 import { useParams } from "react-router-dom";
-import bangles0 from "../../assets/images/ChainedChoker/1.jpg";
-import bangles1 from "../../assets/images/ChainedChoker/2.jpg";
-import bangles2 from "../../assets/images/ChainedChoker/3.jpg";
-import bangles3 from "../../assets/images/ChainedChoker/4.jpg";
+// import bangles0 from "../../assets/images/ChainedChoker/1.jpg";
+// import bangles1 from "../../assets/images/ChainedChoker/2.jpg";
+// import bangles2 from "../../assets/images/ChainedChoker/3.jpg";
+// import bangles3 from "../../assets/images/ChainedChoker/4.jpg";
 
-// imported the pictures for products seperately as I was having internet issues and thr pictures were'nt loading. leaving the commented code to test with pictures from frontend incase the picturess take long or load from the backend.
+// imported the pictures for products seperately as I was having internet issues and thr pictures were'nt loading.
+// leaving the commented code to test with pictures from frontend incase the picturess take long or load from the backend.
 function ProductDetails() {
   const [selectedProduct, setSelectedProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+
   const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const { productId } = useParams();
   const getSelectedProduct = async (productId) => {
@@ -28,6 +31,17 @@ function ProductDetails() {
     }
   }, [productId]);
 
+  // to Decrement and Increment the quantity of products
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevCount) => prevCount - 1);
+    }
+  };
+  const handleIncrement = () => {
+    if (quantity < 10) {
+      setQuantity((prevCount) => prevCount + 1);
+    }
+  };
   return (
     <main className="productDetail">
       <h1 className="productDetail__heading">{selectedProduct.title}</h1>
@@ -56,7 +70,7 @@ function ProductDetails() {
             ></img>{" "}
           </div>
         </div> */}
-        <div className="productDetail__article-images">
+        {/* <div className="productDetail__article-images">
           <img
             className="productDetail__article-images-main"
             src={bangles0}
@@ -79,7 +93,7 @@ function ProductDetails() {
               alt={selectedProduct.title}
             ></img>{" "}
           </div>
-        </div>
+        </div> */}
         <section className="productDetail__article-details">
           <p className="productDetail__article-details-description">
             {selectedProduct.description}
@@ -92,17 +106,19 @@ function ProductDetails() {
               <div className="productDetail__article-details-pricing-container-numbers">
                 <button
                   className="productDetail__article-details-pricing-container-numbers-minus"
-                  type="submit"
+                  type="button"
+                  onClick={handleDecrement}
                 >
                   {" "}
                   -{" "}
                 </button>
-                <p className="productDetail__article-details-pricing-container-numbers-value">
+                <div className="productDetail__article-details-pricing-container-numbers-value">
                   {" "}
-                  1
-                </p>
+                  {quantity}
+                </div>
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleIncrement}
                   className="productDetail__article-details-pricing-container-numbers-plus"
                 >
                   {" "}
