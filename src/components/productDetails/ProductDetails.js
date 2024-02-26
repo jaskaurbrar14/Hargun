@@ -42,11 +42,12 @@ function ProductDetails() {
       setQuantity((prevCount) => prevCount + 1);
     }
   };
+
   return (
     <main className="productDetail">
       <h1 className="productDetail__heading">{selectedProduct.title}</h1>
       <article key={selectedProduct.id} className="productDetail__article">
-        {/* <div className="productDetail__article-images">
+        <div className="productDetail__article-images">
           <img
             className="productDetail__article-images-main"
             src={selectedProduct.photo[0]}
@@ -69,7 +70,7 @@ function ProductDetails() {
               alt={selectedProduct.title}
             ></img>{" "}
           </div>
-        </div> */}
+        </div>
         {/* <div className="productDetail__article-images">
           <img
             className="productDetail__article-images-main"
