@@ -2,6 +2,19 @@
 
 Jewellery E-Commerce
 
+## Table of Contents
+
+- [Overview](#Overview)
+- [Implementation](#Implementation)
+  - [Installation on Developer Environment](#Installation-on-Developer-Environment)
+  - [Folder Structure](#Folder-Structure)
+  - [Tech Stack](#Tech-Stack)
+  - [Sitemap](#Sitemap)
+  - [Mockups](#Mockups)
+  - [Data](#Data)
+  - [Endpoints](#Endpoints)
+- [Nice to haves](#Nice-to-haves)
+
 ## Overview
 
 This is a minimalist jewellery e-commerce website that will be built with React and CSS. This website features a modern and intuitive design, with easy-to-use navigation and a simple shopping experience that puts the focus on the products.
@@ -26,7 +39,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
 
 ## Implementation
 
-### Installation on developer environment
+### Installation-on-Developer-Environment
 
 1. Clone the repository:
 
@@ -56,7 +69,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
    npm start
    ```
 
-### Folder Structure
+### Folder-Structure
 
 - public: Contains static assets like HTML files and images.
 - src: Contains the React application source code.
@@ -74,7 +87,7 @@ I plan to open my own e-commerce store one day and I want to build the website f
 
 - ![Folder structure of React app](<websiteImages/Screenshot 2024-02-26 at 5.34.41 AM.png>)
 
-### Tech Stack
+### Tech-Stack
 
 - React
 - MySQL
@@ -88,10 +101,6 @@ I plan to open my own e-commerce store one day and I want to build the website f
   - knex
   - express
   - a system for login(If have enough time to implement it)
-
-### APIs
-
-- No external APIs will be used for the first sprint
 
 ### Sitemap
 
@@ -163,62 +172,6 @@ List endpoints that your server will implement, including HTTP methods, paramete
       ],
       "description": "Perfect to pair with the bay hoops to make a dainty set of sophistication."
       }
-
-### Auth
-
--sprint 2, will include login
-
-## Roadmap
-
-Create client - react project with routes and boilerplate pages
-
-- Spint 1
-
-  - Create server
-
-  - express project with routing, with placeholder 200 responses
-
-  - Create migrations
-
-  - Create seeds with sample jewellery products data
-
-  - Deploy client and server projects so all commits will be reflected in production
-
-  - Feature: Home page
-
-  - Implement list of links to other product categories
-  - create a trending products section
-  - create a header/footer
-  - Create GET /products endpoint
-  - Create GET /products/:productId category endpoint
-
-  - Feature: View product
-
-    - Implement view product page
-    - Create GET /products/:productId
-    - Implement trending now section at the end of page content
-
-  - Bug fixes
-
-  - DEMO DAY
-
-- Sprint 2
-
-  - Feature: Create account
-
-    - Implement register page + form
-    - Create POST /users/register endpoint
-    - Implement local storage to save interseted product information
-
-  - Feature: Login
-
-    - Implement login page + form
-    - Create POST /users/login endpoint
-
-  - Feature: Implement JWT tokens
-
-    - Server: Update expected requests / responses on protected endpoints
-    - Client: Store JWT in local storage, include JWT on axios calls
 
 ## Nice-to-haves
 
