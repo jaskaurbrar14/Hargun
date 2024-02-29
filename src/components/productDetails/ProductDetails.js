@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import "./ProductDetails.scss";
 import { useParams } from "react-router-dom";
 import swal from "sweetalert";
-import Slider from "react-slick";
+import { useCartContext } from "../../context/cart-context";
 
 function ProductDetails() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
-
+  const { addToCart } = useCartContext();
   const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const { productId } = useParams();
   const getSelectedProduct = async (productId) => {
@@ -39,44 +39,6 @@ function ProductDetails() {
     }
   };
 
-  // function to add products into cart
-  const submitAddToCart = async (event) => {
-    event.preventDefault();
-    const data = {
-      product_id: selectedProduct.id,
-      product_quantity: quantity,
-    };
-
-    try {
-      const res = await axios.patch(
-        `${REACT_APP_SERVER_URL}/add-to-cart`,
-        data
-      );
-      if (res.data.status === 201) {
-        swal({
-          icon: "success",
-          text: `"success" ${res.data.message} "success"`,
-        });
-      } else if (res.data.status === 409) {
-        swal({
-          icon: "warning",
-          text: `"warning") ${res.data.message} "warning"`,
-        });
-      }
-    } catch (err) {
-      console.error({ err });
-    }
-  };
-
-  // slider settings
-  var settings = {
-    dots: false,
-    infinite: true,
-    arrows: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
     <>
       {selectedProduct && (
@@ -84,14 +46,11 @@ function ProductDetails() {
           <h1 className="productDetail__heading">{selectedProduct.title}</h1>
           <article key={selectedProduct.id} className="productDetail__article">
             <div className="productDetail__article-images">
-              <Slider {...settings}>
-                <img
-                  className="productDetail__article-images-main"
-                  src={selectedProduct.photo[0]}
-                  alt={selectedProduct.title}
-                ></img>{" "}
-              </Slider>
-
+              <img
+                className="productDetail__article-images-main"
+                src={selectedProduct.photo[0]}
+                alt={selectedProduct.title}
+              ></img>{" "}
               <div className="productDetail__article-images-sec">
                 {selectedProduct.photo.map((photo, index) => {
                   if (index >= 1) {
@@ -147,7 +106,7 @@ function ProductDetails() {
               <div className="productDetail__article-details-cta">
                 <button
                   type="submit"
-                  onClick={(event) => submitAddToCart(event)}
+                  onClick={() => addToCart(quantity, selectedProduct)}
                   className="productDetail__article-details-cta-cart"
                 >
                   Add to Cart
